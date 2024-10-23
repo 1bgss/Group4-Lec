@@ -1,0 +1,452 @@
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Buat nav */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff6f61;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999; /* Pastikan navbar tetap di atas */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #e55649;
+    border-radius: 5px;
+}
+
+.navbar .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 1001; 
+}
+
+.navbar .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar-nav a {
+    margin-left: 15px;
+}
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #ff6f61;
+        flex-direction: column;
+        align-items: center;
+        z-index: 999; 
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .navbar .hamburger {
+        display: flex;
+        z-index: 1001; 
+    }
+
+    .navbar-nav a {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+
+
+
+/* Bagian admin dashboard */
+.admin-dashboard {
+    margin: 30px;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.dashboard-title {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    width: 32%;
+    margin: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.05);
+}
+
+.dashboard-card h3 {
+    color: #ff6f61;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.dashboard-card p {
+    font-size: 16px;
+    margin: 15px 0;
+    color: #666;
+}
+
+/* Buat bagian Event Management */
+.event-management {
+    margin: 30px;
+    padding: 30px;
+}
+
+.event-management h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.event-form {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.event-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: 600;
+}
+
+.event-form input,
+.event-form textarea,
+.event-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.event-form button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.event-form button:hover {
+    background-color: #e55649;
+}
+
+/* Buat table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+}
+
+table th,
+table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #ff6f61;
+    color: white;
+    text-transform: uppercase;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Buat tombol */
+button {
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #ff6f61;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e55649;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+}
+
+/* Buat Card event */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    max-height: 300px; 
+    object-fit: cover; 
+    border-bottom: 2px solid #ff6f61;
+    border-radius: 8px; 
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-bottom: 15px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card .btn {
+    background-color: #ff6f61;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.card .btn:hover {
+    background-color: #e55649;
+}
+
+/* Buat Footer */
+footer {
+    background-color: #ff6f61;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Pesan2 */
+.message {
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Ini bagian event reg */
+.event-details {
+    margin: 30px;
+    padding: 30px;
+}
+
+.event-details h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Buat button cancel*/
+.btn-cancel {
+    background-color: #ffc107;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #e0a800;
+}
+
+/* Buat buletan pp*/
+.profile-photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+/* Buat navbar pp */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff6f61;
+    padding: 15px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .profile-section {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .profile-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Buat up pp */
+.profile-upload-form {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.profile-upload-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.profile-upload-form input[type="file"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.profile-upload-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.profile-upload-form button:hover {
+    background-color: #218838;
+}
+
+/* Buat welcoming */
+.welcome-message {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    font-weight: bold;
+}
