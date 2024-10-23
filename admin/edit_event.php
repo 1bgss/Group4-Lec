@@ -13,7 +13,7 @@ $stmt = $koneksi->prepare("SELECT * FROM events WHERE id = ?");
 $stmt->execute([$event_id]);
 $event = $stmt->fetch(PDO::FETCH_ASSOC);
 
-$updateSuccess = false; // Flag to check if update is successful
+$updateSuccess = false; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $event_name = htmlspecialchars($_POST['event_name']);
