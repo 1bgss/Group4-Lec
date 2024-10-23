@@ -24,12 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $koneksi->prepare("INSERT INTO events (event_name, event_description, event_date, location, max_participants, total_tickets, ticket_price, status, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->execute([$event_name, $event_description, $event_date, $location, $max_participants, $total_tickets, $ticket_price, $status, $image]);
 
-    // Set session status untuk menampilkan alert
     $_SESSION['event_created'] = true;
 
-    // Redirect to dashboard
     header('Location: dashboard_admin.php');
-    exit; // Pastikan untuk keluar setelah pengalihan
+    exit; 
 }
 ?>
 
