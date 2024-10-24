@@ -18,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $koneksi->prepare("UPDATE users SET reset_token = ?, reset_token_expiry = DATE_ADD(NOW(), INTERVAL 1 HOUR) WHERE email = ?");
         $stmt->execute([$token, $email]);
 
-        // Kirim email dengan link reset password
         $reset_link = "http://yourwebsite.com/reset_password.php?token=$token";
         $subject = "Password Reset Request";
         $message = "Click the following link to reset your password: $reset_link";
@@ -26,17 +25,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mail = new PHPMailer(true);
         
         try {
-            // Konfigurasi server SMTP
             $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com'; // Ganti dengan host SMTP Anda (misal Gmail atau server Anda sendiri)
+            $mail->Host = 'smtp.gmail.com'; 
             $mail->SMTPAuth = true;
-            $mail->Username = 'your-email@gmail.com'; // Ganti dengan email Anda
-            $mail->Password = 'your-email-password'; // Ganti dengan password email Anda
+            $mail->Username = 'your-email@gmail.com'; 
+            $mail->Password = 'your-email-password'; 
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
-            // Pengirim dan Penerima Email
-            $mail->setFrom('no-reply@yourwebsite.com', 'Your Website'); // Ganti dengan email Anda
+            $mail->setFrom('no-reply@yourwebsite.com', 'Your Website'); 
             $mail->addAddress($email);
 
             $mail->isHTML(true);
